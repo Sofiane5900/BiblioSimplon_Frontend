@@ -6,4 +6,12 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../../public/red-back.png");
+}
+
+.background-image {
+  background-image: url("../../public/red-back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
