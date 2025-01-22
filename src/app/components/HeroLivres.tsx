@@ -1,29 +1,23 @@
 "use client";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Livre } from "../types/livre";
+import { useState } from "react";
 import { FocusCards } from "../components/ui/focus-cards";
-import Link from "next/link";
 import { AjoutLivresForm } from "../components/AjoutLivresForm";
-export default function HeroLivres() {
-  const [livres, setLivres] = useState<Livre[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
+import { useGetAllLivres } from "../hooks/useGetAllLivres";
+import { Livre } from "../types/livre";
+import { Card } from "../types/cards";
 
+export default function HeroLivres() {
+  const [isOpen, setIsOpen] = useState(false);
+  const { livres } = useGetAllLivres();
   const openModal = () => setIsOpen(true);
 
-  useEffect(() => {
-    axios.get("https://localhost:7252/api/Livres").then((response) => {
-      setLivres(response.data);
-    });
-  }, []);
-
-  const cards = livres.map((livre) => ({
+  const cards: Card[] = livres.map((livre: Livre) => ({
     id: livre.id,
     title: livre.titre,
     auteur: livre.auteur,
     isbn: livre.isbn,
     estDisponible: livre.estDisponible,
-    src: "https://m.media-amazon.com/images/I/91JaGS-evHL._UF1000,1000_QL80_.jpg", // Same image URL for all books
+    imageURL: livre.imageURL,
   }));
 
   return (

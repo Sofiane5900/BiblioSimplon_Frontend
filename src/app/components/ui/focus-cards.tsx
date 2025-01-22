@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { cn } from "../../lib/utils";
 import { useDeleteLivre } from "@/app/hooks/useDeleteLivre";
+import { Card as CardType } from "../../types/cards"; // Card existe déjà, donc on renomme le type
 
 export const Card = React.memo(
   ({
@@ -28,8 +29,8 @@ export const Card = React.memo(
         )}
       >
         <Image
-          src={card.src}
-          alt={card.title}
+          src={card.imageURL}
+          alt="C'est une image"
           fill
           className="object-cover absolute inset-0"
         />
@@ -69,16 +70,7 @@ export const Card = React.memo(
 
 Card.displayName = "Card";
 
-// TODO : On a déjà un type Livre, idéalement remplacer Cards par Livre
-type Card = {
-  id: number;
-  title: string;
-  src: string;
-  auteur: string;
-  estDisponible: boolean;
-};
-
-export function FocusCards({ cards }: { cards: Card[] }) {
+export function FocusCards({ cards }: { cards: CardType[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
