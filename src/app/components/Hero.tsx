@@ -7,8 +7,8 @@ export function Hero() {
       {/* Left Section */}
       <div className="text-center xl:text-left space-y-6 max-w-lg">
         <h1 className="text-4xl font-bold poppins text-teal-950">
-          Faites votre commande avec{" "}
-          <span className="text-red-600">RestauSimplon</span>
+          Gérer notre bibliothéque avec l'application{" "}
+          <span className="text-red-600">BiblioSimplon</span>
         </h1>
         <p className="text-gray-600 text-lg">
           Ajoutez, modifiez ou supprimez des articles du menu en quelques clics.
