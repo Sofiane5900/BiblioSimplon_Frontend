@@ -2,30 +2,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Livre } from "../types/livre";
+import { Navbar } from "../components/Navbar";
+import { FocusCards } from "../components/ui/focus-cards";
+import HeroLivres from "../components/HeroLivres";
+import { Footer } from "../components/Footer";
 
 export default function Livres() {
-  const [livres, setLivres] = useState<Livre[]>([]);
-
-  useEffect(() => {
-    axios.get("https://localhost:7252/api/Livres").then((response) => {
-      setLivres(response.data);
-    });
-  }, []);
-
   return (
-    <div>
-      <h1>Livres:</h1>
-      <ul>
-        {livres.map((livre: Livre) => (
-          <li key={livre.id} className="mb-5">
-            <div className="flex flex-col">
-              <span>Titre : {livre.titre}</span>
-              <span>Auteur : {livre.auteur}</span>
-              <span>ISBN : {livre.isbn}</span>
-            </div>
-          </li>
-        ))}
-      </ul>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex-grow">
+        <HeroLivres />
+      </div>
+      <Footer />
     </div>
   );
 }

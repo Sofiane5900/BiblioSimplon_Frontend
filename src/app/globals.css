@@ -9,9 +9,20 @@ body {
   /* background-image: url("../../public/red-back.png"); */
 }
 
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
 /* .background-image {
   background-image: url("../../public/red-back.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 } */
+
+@font-face {
+  font-family: "Inter";
+  src: url();
+}

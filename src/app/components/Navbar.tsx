@@ -47,7 +47,7 @@ export function Navbar() {
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 ">
-              <NavItem href="/my-books" icon={Book}>
+              <NavItem href="/livres" icon={Book}>
                 Livres
               </NavItem>
               <NavItem href="/profile" icon={UserCircle}>
