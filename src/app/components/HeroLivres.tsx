@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { FocusCards } from "../components/ui/focus-cards";
-import { AjoutLivresForm } from "../components/AjoutLivresForm";
+import AjoutLivresForm from "../components/AjoutLivresForm";
 import { useGetAllLivres } from "../hooks/useGetAllLivres";
 import { Livre } from "../types/livre";
 import { Card } from "../types/cards";
@@ -19,6 +19,25 @@ export default function HeroLivres() {
     estDisponible: livre.estDisponible,
     imageURL: livre.imageURL,
   }));
+
+  const [formData, setFormData] = useState({
+    titre: "",
+    auteur: "",
+    isbn: "",
+    imageURL: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+  };
 
   return (
     <div className="container mx-auto p-4">

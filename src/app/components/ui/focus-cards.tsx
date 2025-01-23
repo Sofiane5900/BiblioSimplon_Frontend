@@ -3,7 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { cn } from "../../lib/utils";
 import { useDeleteLivre } from "@/app/hooks/useDeleteLivre";
-import { Card as CardType } from "../../types/cards"; // Card existe déjà, donc on renomme le type
+import { Card as CardType } from "../../types/cards";
+// Card existe déjà, donc on renomme le type
 
 export const Card = React.memo(
   ({
@@ -18,6 +19,7 @@ export const Card = React.memo(
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
   }) => {
     const { supprimerLivre } = useDeleteLivre(); // Utilisation de mon hook pour requete DELETE
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
       <div
