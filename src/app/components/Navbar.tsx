@@ -50,10 +50,10 @@ export function Navbar() {
               <NavItem href="/livres" icon={Book}>
                 Livres
               </NavItem>
-              <NavItem href="/profile" icon={UserCircle}>
+              <NavItem href="/membres" icon={UserCircle}>
                 Membres
               </NavItem>
-              <NavItem href="/settings" icon={Handshake}>
+              <NavItem href="/emprunts" icon={Handshake}>
                 Emprunts
               </NavItem>
             </div>
