@@ -19,7 +19,6 @@ export const Card = React.memo(
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
   }) => {
     const { supprimerLivre } = useDeleteLivre(); // Utilisation de mon hook pour requete DELETE
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
       <div
