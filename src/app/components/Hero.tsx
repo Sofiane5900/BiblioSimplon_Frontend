@@ -26,9 +26,11 @@ export function Hero() {
                 Consulter les livres
               </button>
             </Link>
-            <button className="px-6 py-3 bg-red-600 text-white rounded-md shadow-md hover:bg-red-500 transition">
-              Faire un emprunt
-            </button>
+            <Link href="/emprunts">
+              <button className="px-8 py-3 bg-red-600 text-white rounded-md shadow-md hover:bg-red-500 transition">
+                Faire un emprunt
+              </button>
+            </Link>
           </div>
         </div>
 

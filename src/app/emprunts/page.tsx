@@ -1,15 +1,13 @@
-"use client";
-
 import { Navbar } from "../components/Navbar";
-import HeroLivres from "../components/HeroLivres";
 import { Footer } from "../components/Footer";
+import EmpruntsList from "../components/EmpruntsList";
 
-export default function Livres() {
+export default function Emprunts() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <div className="flex-grow">
-        <HeroLivres />
+        <EmpruntsList />
       </div>
       <Footer />
     </div>

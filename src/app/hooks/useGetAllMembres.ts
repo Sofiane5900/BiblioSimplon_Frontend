@@ -5,6 +5,8 @@ import { Membre } from "../types/membre";
 export const useGetAllMembres = () => {
   const [membres, setMembres] = useState<Membre[]>([]);
 
+  // TODO : rajouter de l'asynchronisme?
+
   useEffect(() => {
     // UseEffect s'éxecute après chaque rendu de la page
     axios.get("https://localhost:7252/api/Membre").then((response) => {

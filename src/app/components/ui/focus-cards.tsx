@@ -54,9 +54,9 @@ export const Card = React.memo(
             <div className="flex space-x-2 mt-2">
               <button
                 className="px-2 py-1 bg-red-600 text-white rounded-md hover:bg-red-500 transition"
-                onClick={() => supprimerLivre(card.id)} // Assuming `card.id` exists
+                onClick={() => supprimerLivre(card.id)}
               >
-                Delete
+                Supprimer
               </button>
               <button className="px-2 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition">
                 Emprunt

@@ -1,9 +1,16 @@
 "use client";
+import { useState } from "react";
+import { useDeleteMembre } from "../hooks/useDeleteMembre";
 import { useGetAllMembres } from "../hooks/useGetAllMembres";
+import AjoutMembresForm from "./AjoutMembresForm";
 import Image from "next/image";
+import { TiDelete } from "react-icons/ti";
 
 export default function MembresList() {
   const { membres } = useGetAllMembres();
+  const { supprimerMembre } = useDeleteMembre();
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
 
   return (
     <div className="className">
@@ -26,12 +33,13 @@ export default function MembresList() {
                   <th className="px-5 py-3 text-center">Nom</th>
                   <th className="px-5 py-3 text-center">Prenom</th>
                   <th className="px-5 py-3 text-center">Email</th>
+                  <th className="px-5 py-3 text-center">Actions</th>
                 </tr>
               </thead>
-              <tbody className="text-gray-500">
+              <tbody>
                 {membres.map((membre, index) => (
                   <tr key={index}>
-                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm text-center">
+                    <td className="border-b border-gray-200 bg-white text-teal-950 px-5 py-5 text-sm text-center">
                       <p className="whitespace-no-wrap">{membre.id}</p>
                     </td>
                     <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm text-center">
@@ -45,14 +53,22 @@ export default function MembresList() {
                         />
                       </div>
                     </td>
-                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm text-center">
+                    <td className="border-b border-gray-200 bg-white  text-teal-950 px-5 py-5 text-sm text-center">
                       <p className="whitespace-no-wrap">{membre.nom}</p>
                     </td>
-                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm text-center">
+                    <td className="border-b border-gray-200 bg-white text-teal-950 px-5 py-5 text-sm text-center">
                       <p className="whitespace-no-wrap">{membre.prenom}</p>
                     </td>
-                    <td className="border-b border-gray-200 bg-white px-5 py-5 text-sm text-center">
+                    <td className="border-b border-gray-200 bg-white text-teal-950 px-5 py-5 text-sm text-center">
                       <p className="whitespace-no-wrap">{membre.email}</p>
+                    </td>
+                    <td className="border-b border-gray-200 bg-white  text-teal-950 px-5 py-5 text-sm text-center">
+                      <button
+                        className="text-red-500 hover:text-red-700"
+                        onClick={() => supprimerMembre(membre.id)}
+                      >
+                        X
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -60,6 +76,15 @@ export default function MembresList() {
             </table>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center mt-2">
+        <button
+          onClick={openModal}
+          className="shadow-[0_0_0_3px_#8B0000_inset] px-6 py-2 bg-transparent border  text-teal-950 rounded-lg font-bold transform hover:-translate-y-1 transition duration-400"
+        >
+          Ajouter un membre
+        </button>
+        <AjoutMembresForm isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </div>
   );
