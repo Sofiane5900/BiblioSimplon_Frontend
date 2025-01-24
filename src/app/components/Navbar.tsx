@@ -4,9 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   Book,
-  Search,
   UserCircle,
-  Settings,
   Menu,
   X,
   Handshake,

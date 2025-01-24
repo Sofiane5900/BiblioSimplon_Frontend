@@ -20,12 +20,12 @@ export default function HeroLivres() {
     imageURL: livre.imageURL,
   }));
 
-  const [formData, setFormData] = useState({
-    titre: "",
-    auteur: "",
-    isbn: "",
-    imageURL: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   titre: "",
+  //   auteur: "",
+  //   isbn: "",
+  //   imageURL: "",
+  // });
 
   // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   setFormData({
