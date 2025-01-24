@@ -53,7 +53,7 @@ export function AjoutLivresForm({
             <div className="bg-white rounded-2xl p-8 w-full max-w-2xl transition-transform">
               <div className="flex justify-between items-center mb-6">
                 <h1 className="text-3xl font-bold  mx-auto text-teal-950">
-                  Ajout d'un livre
+                  Ajout d&apos;un livre
                 </h1>
                 <button
                   onClick={closeModal}

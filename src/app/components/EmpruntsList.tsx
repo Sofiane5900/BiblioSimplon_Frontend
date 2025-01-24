@@ -1,15 +1,13 @@
 "use client";
 import { useState } from "react";
-import AjoutMembresForm from "./AjoutMembresForm";
-import Image from "next/image";
 import { useGetAllEmprunts } from "../hooks/useGetAllEmprunts";
 import { useDeleteEmprunt } from "../hooks/useDeleteEmprunt";
 
 export default function EmpruntsList() {
   const { emprunts } = useGetAllEmprunts();
   const { supprimerEmprunt } = useDeleteEmprunt();
-  const [isOpen, setIsOpen] = useState(false);
-  const openModal = () => setIsOpen(true);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const openModal = () => setIsOpen(true);
 
   return (
     <div className="className">

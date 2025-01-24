@@ -4,7 +4,6 @@ import { useDeleteMembre } from "../hooks/useDeleteMembre";
 import { useGetAllMembres } from "../hooks/useGetAllMembres";
 import AjoutMembresForm from "./AjoutMembresForm";
 import Image from "next/image";
-import { TiDelete } from "react-icons/ti";
 
 export default function MembresList() {
   const { membres } = useGetAllMembres();

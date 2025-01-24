@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import HeroImage from "../../../public/Unsplash.png";
-import { motion } from "framer-motion";
 import { ColourfulText } from "./ui/colourful-text";
 import Link from "next/link";
+import HeroImage from "../../../public/Unsplash.png";
+
 
 export function Hero() {
   return (
@@ -12,7 +12,7 @@ export function Hero() {
         {/* Left Section */}
         <div className="text-center xl:text-left space-y-6 max-w-lg">
           <h1 className="text-4xl font-bold poppins text-teal-950 ">
-            Gérez la bibliothèque avec l'application{" "}
+            Gérez la bibliothèque avec l&apos;application{" "}
             <ColourfulText text="BiblioSimplon" />
           </h1>
           <p className="text-gray-600 text-lg">
