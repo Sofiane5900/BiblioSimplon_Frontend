@@ -1,6 +1,6 @@
-export interface Livre {
+export interface Card {
   id: number;
-  titre: string;
+  title: string;
   auteur: string;
   isbn: string;
   estDisponible: boolean;

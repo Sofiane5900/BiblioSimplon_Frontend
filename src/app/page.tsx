@@ -1,38 +1,19 @@
-"use client";
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-interface Livre {
-  id: number;
-  titre: string;
-  auteur: string;
-  isbn: string;
-  estDisponible: boolean;
-}
+import { Footer } from "./components/Footer";
+import { Hero } from "./components/Hero";
+import { Navbar } from "./components/Navbar";
+import { Temoigagnes } from "./components/Temoigagnes";
 
 export default function Home() {
-  const [livres, setLivres] = useState<Livre[]>([]);
-
-  useEffect(() => {
-    axios.get("https://localhost:7252/api/Livres").then((response) => {
-      setLivres(response.data);
-    });
-  }, []);
-
   return (
-    <div>
-      <h1>Livres:</h1>
-      <ul>
-        {livres.map((livre: Livre) => (
-          <li key={livre.id} className="mb-5">
-            <div className="flex flex-col">
-              <span>Titre : {livre.titre}</span>
-              <span>Auteur : {livre.auteur}</span>
-              <span>ISBN : {livre.isbn}</span>
-            </div>
-          </li>
-        ))}
-      </ul>
+    <div className="background-image">
+      <Navbar />
+      <Hero />
+      <div className="w-full flex-grow h-4 bg-red-600 mt-4"></div>
+      <h1 className="text-4xl font-bold text-center text-teal-950 my-16">
+        Nos Témoignages
+      </h1>{" "}
+      <Temoigagnes />
+      <Footer />
     </div>
   );
 }
