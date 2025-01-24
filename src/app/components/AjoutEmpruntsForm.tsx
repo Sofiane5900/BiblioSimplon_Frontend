@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { BiBook, BiUser, BiBarcode, BiImage } from "react-icons/bi";
+import { BiBook, BiUser} from "react-icons/bi";
 import { usePostEmprunts } from "../hooks/usePostEmprunt";
 
 export function AjoutEmpruntsForm({
