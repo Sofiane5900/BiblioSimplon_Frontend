@@ -95,7 +95,7 @@ export function AjoutEmpruntsForm({
                     onClick={async () => await AjoutEmprunt(Number(formData.membreId), Number(formData.livreId))}
                     type="submit"
                  >
-                    Ajouter l'emprunt
+                    Ajouter l&apos;emprunt
                   </button>
                 </div>
               </form>
