@@ -1,3 +1,4 @@
+import { Inter } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const {
@@ -13,10 +14,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      fontFamily: {
+        Inter: ["Inter", "sans-serif"],
+      }
     },
   },
 

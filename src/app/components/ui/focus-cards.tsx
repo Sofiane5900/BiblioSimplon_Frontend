@@ -26,7 +26,7 @@ export const Card = React.memo(
         onMouseLeave={() => setHovered(null)}
         className={cn(
           "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-80 w-full transition-all  border-2 border-yellow-950 duration-300 ease-out",
-          hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
+          hovered !== null && hovered !== index && " scale-[0.98]"
         )}
       >
         <Image
@@ -44,6 +44,7 @@ export const Card = React.memo(
           <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
           {/* Overlay */}
           <div className="relative text-xs md:text-sm font-medium text-white flex flex-col space-y-1 z-10">
+            <span>ID : {card.id}</span>
             <span>{card.title}</span>
             <span>{card.auteur}</span>
             <span
@@ -58,9 +59,7 @@ export const Card = React.memo(
               >
                 Supprimer
               </button>
-              <button className="px-2 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition">
-                Emprunt
-              </button>
+
             </div>
           </div>
         </div>

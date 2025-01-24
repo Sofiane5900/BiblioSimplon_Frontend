@@ -1,13 +1,15 @@
 import axios from "axios";
+
 export function usePostEmprunts() {
     const AjoutEmprunt = async (
         membreId: number,
         livreId: number,
     ) => {
         try {
-            const response = await axios.post("https://localhost:7252/api/Emprunts", {
+            const response = await axios.post("https://localhost:7252/api/Emprunt", {
+                // La requete POST prend en paramétres, l'id d'un membre et d'un livre
                 membreId,
-                livreId,
+                livreId,  
             });
             alert("Emprunt ajouté avec succès");
             console.log(response.data);

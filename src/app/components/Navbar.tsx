@@ -39,14 +39,14 @@ export function Navbar() {
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0 flex items-center">
                 <Book className="h-8 w-8 text-red-400" />
-                <h1 className="ml-2 text-xl font-bold text-gray-900">
+                <h1 className="ml-2 text-xl font-bold text-gray-900 font-Inter">
                   Biblio<span className="text-red-800">Simplon</span>
                 </h1>
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 ">
               <NavItem href="/livres" icon={Book}>
-                Livres
+               Livres
               </NavItem>
               <NavItem href="/membres" icon={UserCircle}>
                 Membres

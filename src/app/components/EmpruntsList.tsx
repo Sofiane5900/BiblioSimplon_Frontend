@@ -1,12 +1,14 @@
 "use client";
+import { useState } from "react";
 import { useGetAllEmprunts } from "../hooks/useGetAllEmprunts";
 import { useDeleteEmprunt } from "../hooks/useDeleteEmprunt";
+import { AjoutEmpruntsForm } from "../components/AjoutEmpruntsForm";
 
 export default function EmpruntsList() {
   const { emprunts } = useGetAllEmprunts();
   const { supprimerEmprunt } = useDeleteEmprunt();
-  // const [isOpen, setIsOpen] = useState(false);
-  // const openModal = () => setIsOpen(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
 
   return (
     <div className="className">
@@ -64,9 +66,21 @@ export default function EmpruntsList() {
                 ))}
               </tbody>
             </table>
+             
           </div>
+          
         </div>
+        
       </div>
+      <div className="flex justify-center mt-2">
+                    <button
+                      onClick={openModal}
+                      className="shadow-[0_0_0_3px_#008080_inset] px-6 py-2 bg-transparent border  text-teal-950 rounded-lg font-bold transform hover:-translate-y-1 transition duration-400"
+                    >
+                      Ajouter un emprunt
+                    </button>
+                    <AjoutEmpruntsForm isOpen={isOpen} setIsOpen={setIsOpen} />
+                  </div>
     </div>
   );
 }
