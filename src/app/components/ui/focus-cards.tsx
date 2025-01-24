@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { cn } from "../../lib/utils";
 import { useDeleteLivre } from "@/app/hooks/useDeleteLivre";
-import { Card as CardType } from "../../types/cards";
+import {  Card as CardType } from "../../types/cards";
 // Card existe déjà, donc on renomme le type
 
 export const Card = React.memo(
@@ -13,7 +13,7 @@ export const Card = React.memo(
     hovered,
     setHovered,
   }: {
-    card: any;
+    card: CardType;
     index: number;
     hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
